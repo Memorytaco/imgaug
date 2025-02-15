@@ -18,7 +18,7 @@ import six
 import six.moves as sm
 import scipy
 import scipy.stats
-import imageio
+import imageio.v2 as imageio
 import cv2
 
 from . import imgaug as ia

@@ -8,7 +8,7 @@ from __future__ import print_function, division, absolute_import
 import os
 import json
 
-import imageio
+import imageio.v2 as imageio
 import numpy as np
 
 # filepath to the quokka image, its annotations and depth map

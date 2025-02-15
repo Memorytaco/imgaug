@@ -50,6 +50,10 @@ dev = [
     "types-mock",
     "types-six",
     "types-pillow",
+    "pytest[doctest]",
+    "xdoctest",
+    "imagecorruptions",
+    "setuptools",
 ]
 
 [tool.setuptools.package-dir]
