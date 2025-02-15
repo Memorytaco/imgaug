@@ -7,11 +7,7 @@ import sys
 import os
 import types
 import functools
-# collections.abc exists since 3.3 and is expected to be used for 3.8+
-try:
-    from collections.abc import Iterable
-except ImportError:
-    from collections import Iterable
+from typing import Iterable, Type
 
 import numpy as np
 import cv2
@@ -36,9 +32,9 @@ DEFAULT_FONT_FP = os.path.join(
 # to check if a dtype instance is among these dtypes, use e.g.
 # `dtype.type in  NP_FLOAT_TYPES` do not just use `dtype in NP_FLOAT_TYPES` as
 # that would fail
-NP_FLOAT_TYPES = set(np.sctypes["float"])
-NP_INT_TYPES = set(np.sctypes["int"])
-NP_UINT_TYPES = set(np.sctypes["uint"])
+NP_FLOAT_TYPES: set[Type] = {np.float16, np.float32, np.float64}
+NP_INT_TYPES: set[Type] = {np.int8, np.int16, np.int32, np.int64}
+NP_UINT_TYPES: set[Type] = {np.uint8, np.uint16, np.uint32, np.uint64}
 
 IMSHOW_BACKEND_DEFAULT = "matplotlib"
 
